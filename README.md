@@ -13,8 +13,6 @@ This repository contains all the **Data Structures & Algorithms** problems I’v
 - 🗓️ Started: June 2025  
 - 🚀 Following: NeetCode 150 + Striver’s SDE Sheet  
 - 📈 Current Focus: Consistent problem-solving and topic mastery  
-- 💪 Language: *Auto-detected from solutions*
+- 💪 Languages: Python, C++, Java
 
 ---
-
-## 🗂️ Folder Structure
