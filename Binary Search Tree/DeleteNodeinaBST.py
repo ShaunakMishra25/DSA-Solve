@@ -4,6 +4,33 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
 class Solution:
-    def deleteNode(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
-        
+    def deleteNode(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+        if not root:
+            return None
+
+        if val < root.val:
+            root.left = self.deleteNode(root.left, val)
+        elif val > root.val:
+            root.right = self.deleteNode(root.right, val)
+        else:
+            
+            if not root.left and not root.right:
+                return None
+
+            elif not root.left:
+                return root.right
+            elif not root.right:
+                return root.left
+
+            else:
+                successor = root.right
+                while successor.left:
+                    successor = successor.left
+
+                root.val = successor.val
+
+                root.right = self.deleteNode(root.right, successor.val)
+
+        return root
