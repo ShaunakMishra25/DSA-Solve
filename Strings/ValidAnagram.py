@@ -13,5 +13,3 @@ class Solution:
             dict2[c] = dict2.get(c, 0) + 1
             
         return dict1 == dict2
-            
-            
