@@ -9,25 +9,26 @@ public class FruitIntoBaskets {
 }
 class Solution {
     public int totalFruit(int[] fruits) {
+        HashMap<Integer, Integer> f = new HashMap<>();
         int n = fruits.length;
         int low = 0, res = 0;
-        HashMap<Integer, Integer> f = new HashMap<>();
-
+        
         for(int high = 0; high < n; high++){
-            int oldFreq = f.getOrDefault(fruits[high],0);
-            int newFreq = oldFreq + 1;
-            f.put(fruits[high], newFreq);
             
-            while(f.size()>2){
-                int oldFreqRe = f.getOrDefault(fruits[low], 0);
-                int newFreqRe = oldFreqRe -1;
+            f.put(fruits[high], f.getOrDefault(fruits[high], 0)+1);
 
-                if(newFreqRe == 0) f.remove(fruits[low]);
-                else f.put(fruits[low], newFreqRe);
+            while(f.size()>2){
+                int leftFruit = fruits[low];
+                int updatedFreq = f.getOrDefault(leftFruit ,0) - 1;
+                
+                if(updatedFreq == 0) f.remove(leftFruit);
+                else f.put(leftFruit, updatedFreq);
+                
                 low++;
             }
             res = Math.max(res, high-low+1);
         }
+
         return res;
     }
 }
