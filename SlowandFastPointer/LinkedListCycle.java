@@ -1,4 +1,4 @@
-package LinkedList;
+package SlowandFastPointer;
 
 public class LinkedListCycle {
     public static void main(String[] args) {
