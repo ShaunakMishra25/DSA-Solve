@@ -30,3 +30,37 @@ public:
         return;
     }
 };
+
+/*
+
+
+class Solution {
+    public:
+    vector<vector<int>> combinationSum3(int k, int n) {
+        vector<vector<int>> res;
+        vector<int> curr;
+        
+        solve(n, k, 1, 0, curr, res);
+        return res;
+    }
+    void solve(int n,  int k, int start, int sum, vector<int>& curr, vector<vector<int>>& res ){
+        if(sum == n && curr.size() == k){
+            res.push_back(curr);
+            return;
+        }
+        
+        if(sum > n || curr.size() > k || start > 9){
+            return;
+        }
+        
+        for(int i = start; i <= 9; i++){
+            curr.push_back(i);
+            solve(n, k, i + 1, sum + i, curr, res);
+            curr.pop_back();
+        }
+        
+        return;
+        
+    }
+};
+*/
